@@ -69,7 +69,7 @@ ROOT_URLCONF = 'good.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -94,7 +94,7 @@ WSGI_APPLICATION = 'good.wsgi.application'
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
 #         'NAME': 'award',
-#         'USER': 'alexianne',
+#         'USER': 'wecode',
 #     'PASSWORD':'alexianne',
 #     }
 # }

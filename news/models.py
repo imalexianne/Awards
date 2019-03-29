@@ -30,33 +30,34 @@ class Profile(models.Model):
         profiles = cls.objects.filter(first_name__icontains=search_term)
         return profiles
 
-class Image(models.Model):
+class Project(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
-    image = models.ImageField(upload_to = 'images/')
-    name = models.CharField(max_length =60)
-    caption = models.CharField(max_length =200)
+    title = models.CharField(max_length =60)
+    image = models.ImageField(upload_to = 'news/')
+    description = models.CharField(max_length =60)
+    link = models.CharField(max_length =200)
    
     def __str__(self):
         return self.name
 
-    def save_image(self):
+    def save_project(self):
         self.save()
 
     @classmethod
-    def get_images(cls):
-        images = cls.objects.all()
-        return images    
+    def get_projects(cls):
+        projects = cls.objects.all()
+        return projects    
 
-    def delete_image(self):
+    def delete_project(self):
         self.delete()
 
-class Comments(models.Model):
-    comment = models.CharField(max_length = 300)
-    image = models.ForeignKey(Image, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+# class Comments(models.Model):
+#     comment = models.CharField(max_length = 300)
+#     image = models.ForeignKey(Image, on_delete=models.CASCADE)
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    def save_comment(self):
-        self.save()
+#     def save_comment(self):
+#         self.save()
 
-    def delete_comment(self):
-        self.delete()
+#     def delete_comment(self):
+#         self.delete()

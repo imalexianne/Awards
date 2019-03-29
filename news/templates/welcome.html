@@ -1,32 +1,29 @@
-{% load bootstrap3 %} {% load staticfiles %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-      
-        <title>New Profile</title>
-        {{form.media}}
-      
-      {% block styles %} {% bootstrap_css %}
-        <link rel="stylesheet" href="{% static 'styles.css' %}"> {% endblock %}
-      
-      </head>
-      
+{%extends 'base.html'%}
+{% load bootstrap3 %}
+{% block content %}
+{{block.super}}
+
 <body>
     <div class = "container">
 
-        <form  action="{%url 'profile'%}" method="post" enctype="multipart/form-data">
-            {%csrf_token%}
+      <div>
 
-    {% bootstrap_form form%}
-    <input type="submit" class="btn btn-success btn-lg" value="Submit">
-  </form>
+      <h1 class="well" >WELCOME TO THIS APP!!!</h1>
 
-  {% block scripts %}
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  {% bootstrap_javascript %} {% endblock %}
-</div>
+      
+
+   </div>
+
+            {% for project in projects %}
+            
+               <a href="/projects/{{project.id}}"><img src="{{project.image.url}}" alt="Image"></a>
+               <h1>Title:{{project.title}}</h1>
+               
+            
+         
+            {% endfor %}
+     </div>
 </body>
 
 </html>
+{% endblock %}

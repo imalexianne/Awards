@@ -15,19 +15,19 @@
  
     </div>     
     <div class="row">
-        <p class="text-center"><strong>IMAGES I POSTED:</strong></p>
+        <p class="text-center"><strong>PROJECTS I POSTED:</strong></p>
       
-          {% for item in images %}
+          {% for item in projects %}
       
           <div class="col-md-4">
       
-            <center><img src="{{item.image.url}}" class="img-responsive" alt="Image"></center>
+            <center><h1>Title:"{{item.title}}"<h1></center>
       
             </div>
       
       
           {% empty %}
-          <h2 class="text-center">There are no photos yet</h2>
+          <h2 class="text-center">There are no posted projects </h2>
       
           {% endfor %}
         </div>

@@ -5,21 +5,21 @@
  <div class="container">
 
     <div class="row">
-       <center> <img src="{{image.image.url}}"  class="center" alt="Image"></center>
+       <center> <img src="{{project.image.url}}"  class="center" alt="Image"></center>
     </div>
     <div class="row">
-        <h1 class="text-center">Name:{{image.name}}</h1>
+        <h1 class="text-center">Title:{{project.title}}</h1>
     </div>
        
     <div class="row">
-        <h1>Caption:{{image.caption}}</h1>
+        <h1>Description:{{project.description}}</h1>
     </div>
-       <h1>Poster:{{image.user}}</h1>
+       <h1>link:{{project.link}}</h1>
     </div>
-    <h1><div>comments:{{image.comments}}</div><h1>
+    <h1><div>comments:{{project.comments}}</div><h1>
     <div>
 
-       <button><a href="{%url 'comments'%}">Comment</a></button>
+
    
 </div>
        

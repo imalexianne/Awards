@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http  import HttpResponse,HttpResponseRedirect
-from .forms import ProfileForm,ImageForm,CommentsForm
-from .models import Image,Profile,Comments
+from .forms import ProjectForm,ProfileForm
+from .models import Project,Profile
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
@@ -9,21 +9,22 @@ from django.core.exceptions import ObjectDoesNotExist
 
 @login_required(login_url='/accounts/login/')
 def welcome(request):
-    images = Image.objects.all()
-    return render(request, 'welcome.html',{"images":images})
+    projects = Project.objects.all()
+    return render(request, 'welcome.html',{"projects":projects})
 
 @login_required(login_url='/accounts/login/')
-def images(request,image_id):
-    image = Image.objects.get(id = image_id)
-    return render(request,"info.html", {"image":image})
+def projects(request,project_id):
+    project = Project.objects.get(id = project_id)
+    return render(request,"info.html", {"project":project})
 
 @login_required(login_url='/accounts/login/')
 def myProfile(request,id):
     user = User.objects.get(id = id)
     profiles = Profile.objects.get(user = user)
-    images = Image.objects.filter(user = user).all()
+    projects = Project.objects.filter(user = user).all()
+    form = ProfileForm()
    
-    return render(request,'my_profile.html',{"profiles":profiles,"user":user,"images":images})
+    return render(request,'my_profile.html',{"profiles":profiles,"user":user,"projects":projects,"form":form})
 
 
 
@@ -42,33 +43,33 @@ def profile(request):
         form = ProfileForm()
     return render(request, 'profile.html', {"form": form})
 
-def image(request):
+def project(request):
     current_user = request.user
     if request.method == 'POST':
-        form = ImageForm(request.POST, request.FILES)
+        form = ProjectForm(request.POST, request.FILES)
         if form.is_valid():
-            image = form.save(commit=False)
-            image.user = current_user
-            image.save()
+            project = form.save(commit=False)
+            project.user = current_user
+            project.save()
 
     else:
-        form = ImageForm()
-    return render(request, 'image.html', {"form": form})
+        form = ProjectForm()
+    return render(request, 'project.html', {"form": form})
 
-def comments(request):
-    current_user = request.user
-    if request.method == 'POST':
-        form = CommentsForm(request.POST, request.FILES)
-        if form.is_valid():
-            comments = form.save(commit=False)
-            comments.user = current_user
-            comments.save()
+# def comments(request):
+#     current_user = request.user
+#     if request.method == 'POST':
+#         form = CommentsForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             comments = form.save(commit=False)
+#             comments.user = current_user
+#             comments.save()
 
-            return redirect(welcome)
+#             return redirect(welcome)
 
-    else:
-        form = CommentsForm()
-    return render(request, 'comment.html', {"form": form})
+#     else:
+#         form = CommentsForm()
+#     return render(request, 'comment.html', {"form": form})
 
 
 

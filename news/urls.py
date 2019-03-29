@@ -7,9 +7,9 @@ urlpatterns=[
      url('^$',views.welcome,name = 'welcome'),
      url(r'^profile/', views.profile, name='profile'),
      url(r'^myProfile/(\d+)', views.myProfile, name='myProfile'),
-     url(r'^comments/', views.comments, name='comments'),
-     url(r'^image$',views.image,name ='image'),
-     url(r'^images/(\d+)',views.images,name ='images'),
+     # url(r'^comments/', views.comments, name='comments'),
+     url(r'^project$',views.project,name ='project'),
+     url(r'^projects/(\d+)',views.projects,name ='projects'),
 
 
     #  url(r'^$',views.all_image,name='all_Images'), 
