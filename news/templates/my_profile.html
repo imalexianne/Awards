@@ -1,0 +1,39 @@
+{%extends 'base.html'%}
+
+{% block content %}
+{{block.super}}
+
+<body>
+    <div class = "container">
+    
+     <center><p>Name:{{profiles.first_name}} - {{profiles.last_name}}</p></center>
+     
+     <center><img src="{{profiles.prof_image.url}}" alt="Image"></center><br><br>
+     <center><p>Bio:{{profiles.bio}}</p></center>
+     
+  
+ 
+    </div>     
+    <div class="row">
+        <p class="text-center"><strong>IMAGES I POSTED:</strong></p>
+      
+          {% for item in images %}
+      
+          <div class="col-md-4">
+      
+            <center><img src="{{item.image.url}}" class="img-responsive" alt="Image"></center>
+      
+            </div>
+      
+      
+          {% empty %}
+          <h2 class="text-center">There are no photos yet</h2>
+      
+          {% endfor %}
+        </div>
+      
+</body>
+
+
+</html>
+{% endblock %}
