@@ -16,3 +16,18 @@ Users can post project, comment, like and follow their friends'projects,
 
 User can search other users and be able to see their stories and comment or like the projects.
 
+## Set Up and Installations
+Prerequisites:
+
+Ubuntu Software
+
+Python3.6
+
+Postgres
+
+python virtualenv
+
+django==1.11
+
+bootsrap
+
