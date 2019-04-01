@@ -31,3 +31,8 @@ django==1.11
 
 bootsrap
 
+## Live Link on github
+https://github.com/imalexianne/Awards
+Clone the Repo
+Run the following command on the terminal: git clone https://github.com/imalexianne/Awards.git
+type cd Awards on terminal
