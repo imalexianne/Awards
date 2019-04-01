@@ -47,3 +47,4 @@ Postgresql for the database
 Support and contact details
 For any support please contact me on: imalexianne@gmail.com
 
+## License
