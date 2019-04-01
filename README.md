@@ -36,3 +36,14 @@ https://github.com/imalexianne/Awards
 Clone the Repo
 Run the following command on the terminal: git clone https://github.com/imalexianne/Awards.git
 type cd Awards on terminal
+
+## Technologies used
+Python 3.6
+HTML for the structure
+Bootstrap 4 for the design
+JavaScript
+Heroku for the deployment
+Postgresql for the database
+Support and contact details
+For any support please contact me on: imalexianne@gmail.com
+
