@@ -56,6 +56,16 @@ class Project(models.Model):
         project = cls.objects.filter(title__icontains=search_term)
         return project
 
+class CoreProject(models.Model):
+    title = models.CharField(max_length=40)
+    description = models.TextField()
+    link = models.CharField(max_length=400)
+
+class CoreProfile(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    bio = models.CharField(max_length =200)
+
 # class Comments(models.Model):
 #     comment = models.CharField(max_length = 300)
 #     image = models.ForeignKey(Image, on_delete=models.CASCADE)

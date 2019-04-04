@@ -1,7 +1,15 @@
 from rest_framework import serializers
-from .models import Project
+from .models import CoreProject
+from .models import CoreProfile
 
-class Project(serializers.ModelSerializer):
+class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Project
-        fields = ('title', 'image', 'description', 'link')
+        model = CoreProject
+        fields = ('id','title', 'description', 'link')
+
+class ProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CoreProfile
+        fields = ('id','first_name', 'last_name', 'bio')
+
+        
