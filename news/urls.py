@@ -10,6 +10,8 @@ urlpatterns=[
      # url(r'^comments/', views.comments, name='comments'),
      url(r'^project$',views.project,name ='project'),
      url(r'^projects/(\d+)',views.projects,name ='projects'),
+     # url(r'^api/project/$', views.ProjectList.as_view())
+     # url(r'^ajax/newsletter/$', views.newsletter, name='newsletter')
 
 
     #  url(r'^$',views.all_image,name='all_Images'), 
