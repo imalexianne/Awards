@@ -18,6 +18,7 @@
             
                <a href="/projects/{{project.id}}"><img src="{{project.image.url}}" alt="Image"></a>
                <h1>Title:{{project.title}}</h1>
+            
                
             
          
@@ -27,6 +28,4 @@
 
 </html>
 {% endblock %}
-{% block scripts %} {{block.super}}
-  <script type="text/javascript" src="{%static 'js/newsletter.js'%}"></script>
-{% endblock %}
+
