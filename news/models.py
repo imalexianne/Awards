@@ -51,6 +51,11 @@ class Project(models.Model):
     def delete_project(self):
         self.delete()
 
+    @classmethod
+    def search_by_title(cls,search_term):
+        project = cls.objects.filter(title__icontains=search_term)
+        return project
+
 # class Comments(models.Model):
 #     comment = models.CharField(max_length = 300)
 #     image = models.ForeignKey(Image, on_delete=models.CASCADE)
