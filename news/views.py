@@ -1,3 +1,4 @@
+  
 from django.shortcuts import render,redirect
 from django.http  import HttpResponse,HttpResponseRedirect
 from .forms import ProjectForm,ProfileForm
@@ -55,6 +56,16 @@ def project(request):
     else:
         form = ProjectForm()
     return render(request, 'project.html', {"form": form})
+
+# def newsletter(request):
+#     name = request.POST.get('your_namProjectSerializer
+#     email = request.POST.get('email')ProjectSerializer
+
+#     recipient = NewsLetterRecipients(name=name, email=email)
+#     recipient.save()
+#     send_welcome_email(name, email)
+#     data = {'success': 'You have been successfully added to mailing list'}
+#     return JsonResponse(data)
 
 # def comments(request):
 #     current_user = request.user
