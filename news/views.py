@@ -90,19 +90,18 @@ def project(request):
 #     images = Image.objects.all()
 #     return render(request, 'welcome.html',{"images":images})
 
-# def search_results(request):
+def search_results(request):
 
-#     if 'category' in request.GET and request.GET["category"]:
-#         search_term = request.GET.get("category")
-#         searched_images = Image.search_image(search_term)
-#         message = f"{search_term}"
+    if 'project' in request.GET and request.GET["project"]:
+        search_term = request.GET.get("project")
+        searched_projects = Project.search_by_title(search_term)
+        message = f"{search_term}"
 
-#         return render(request, 'search.html',{"message":message,"images": searched_images})
+        return render(request, 'search.html',{"message":message,"projects": searched_projects})
 
-#     else:
-#         message = "You haven't searched for any term"
-#         return render(request, 'search.html',{"message":message})
-
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'search.html',{"message":message})
 
 # @login_required(login_url='/accounts/login/')
 # def image(request,image_id):
