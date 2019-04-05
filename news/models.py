@@ -11,6 +11,8 @@ class Profile(models.Model):
     prof_image = models.ImageField(upload_to = 'images/')
     bio = models.CharField(max_length =200)
 
+
+
     def __str__(self):
         return self.first_name
 

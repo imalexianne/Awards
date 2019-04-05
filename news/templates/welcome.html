@@ -4,11 +4,11 @@
 {{block.super}}
 
 <body>
-    <div class = "container">
+    <div class = "container" style="background-color:navajowhite;" >
 
       <div>
 
-      <h1 class="well" >WELCOME TO THIS APP!!!</h1>
+     <center> <h1 class="well" color="green" >WELCOME TO THIS APP!!!</h1></center>
 
       
 
@@ -16,8 +16,8 @@
 
             {% for project in projects %}
             
-               <a href="/projects/{{project.id}}"><img src="{{project.image.url}}" alt="Image"></a>
-               <h1>Title:{{project.title}}</h1>
+               <center><a href="/projects/{{project.id}}"><img src="{{project.image.url}}" alt="Image"></a></center>
+               <center><h1>Title:{{project.title}}</h1></center>
             
                
             

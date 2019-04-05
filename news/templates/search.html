@@ -9,7 +9,7 @@
 
   </div>
 
-  <div class="row">
+  <div class="row" style="background-color:navajowhite;">
 
   {% if projects %}
     {% for project in projects %}
@@ -17,13 +17,13 @@
       <center> <img src="{{project.image.url}}"  class="center" alt="Image"></center>
    </div>
    <div class="row">
-       <h1 class="text-center">Title:{{project.title}}</h1>
+    <center><h1 class="text-center">Title:{{project.title}}</h1></center>
    </div>
       
    <div class="row">
-       <h1>Description:{{project.description}}</h1>
+    <center><h1>Description:{{project.description}}</h1></center>
    </div>
-      <h1>Link:<a href="{{project.link}}">{{project.link}}</a></h1>
+   <center><h1>Link:<a href="{{project.link}}">{{project.link}}</a></h1></center>
    </div>
  
     {% endfor %}
