@@ -15,6 +15,7 @@ urlpatterns=[
 
 
     #  url(r'^$',views.all_image,name='all_Images'), 
+     url(r'^searchs/', views.search_result, name='search_result'),
      url(r'^search/', views.search_results, name='search_results'),
      url(r'^api/project/$', views.ProjectList.as_view()),
      url(r'api/project/project-id/(?P<pk>[0-9]+)/$',
